@@ -1,0 +1,566 @@
+@charset "UTF-8";
+
+html{
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    background: #186AC9;
+}
+
+.header-menu,
+header div h1{
+    display: flex;
+}
+
+.header-menu{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #186AC9;
+    padding: 20px;
+}
+.icon{
+    width: 100px;
+    height: auto;
+}
+
+/* topに戻るボタン */
+.top-menu{
+    width: 150px;
+}
+
+#top{
+    width: 100%;
+}
+
+#menu{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+#menu p{
+    color: #fff;
+}
+.hamburger{
+    justify-content:flex-end;
+    flex-grow:1;
+    padding: 0 10px;
+}
+.hamburger p{
+    font-weight: bold;
+}
+
+/* アコーディオンメニュー全体のサイズ・位置 */
+
+.accordion{
+    padding: 15px;
+	font-size: 20px;
+	position: relative;
+    transform: scale( 0.5 , 1 );
+}
+/* sub_menu=nav menu_text=ul */
+
+/* まず中身を見せなくする */
+
+.accordion::before{/* 閉じている時 */
+	content: "";
+	position: absolute;
+    margin: auto;
+	left: 2px;
+    width: 13px;
+    height: 13px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    transform: rotate(135deg);
+}
+.accordion.active::before{/* 開いている時 */
+	content: "";
+	position: absolute;
+    margin: auto;
+	left: 2px;
+    width: 13px;
+    height: 13px;
+    border-left: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    transform: rotate(315deg);
+}
+
+
+.header_color{
+    position: relative;
+}
+
+.accordion-menu{
+    display: none;
+}
+
+.accordion-menu.active{
+    display: block;
+    flex-flow: column;
+    z-index: 10;
+    border: 2px solid #00297E;
+    border-top:none;
+    background-color:#fff;
+    width: 200px;
+    position: absolute;
+    right: 0px;
+    box-sizing: border-box;
+}
+
+
+.sub_menu li{
+    text-align:center;
+    padding-bottom: 20px;
+    padding-top:20px;
+    width: 100%;
+}
+
+.sub_menu li:nth-child(2){
+    background-color: #00297E;
+    height: auto;
+}
+
+ul li a{
+    color: black;
+}
+
+.accordion_profile{
+    color: #fff;
+}
+
+/*お問い合わせエリア*/
+.form-group{
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    border-bottom: 5px solid #DBDBDB;
+}
+
+.form-group .form-control{
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    height: 180px;
+    border: 1px solid #fff;
+    padding: 10px;
+}
+
+/*btn*/
+.btn{
+    border:none;
+    box-shadow:none;
+    background: none;
+    box-sizing: border-box;
+
+}
+
+.btn-group{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-success img,
+.btn-search
+{
+    width: 120px;
+}
+
+
+.icon,.btn-primary img,
+.btn-trash img{
+    width: auto;
+    height: auto;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 10px;
+}
+
+.btn-follow{
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #ED3833;
+    text-align: center;
+    width: 200px;
+    max-width: 200px;
+    height: 2rem;
+    transform: scale( 0.6 , 1 );
+    margin: 0 0 0 auto;
+    padding: 10px;
+}
+
+.btn-danger{
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #52ACFF;
+    text-align: center;
+    width: 200px;
+    max-width: 200px;
+    height: 2rem;
+    transform: scale( 0.6 , 1 );
+    margin: 0 0 0 auto;
+    padding: 10px;
+}
+
+::placeholder {
+  color: #DBDBDB;
+}
+.content{
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal-post{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.2);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content{
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    border-radius:10px;
+}
+
+.test{
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    height: 180px;
+    border: 1px solid #919191;
+    padding: 10px;
+}
+
+.follow_icon,.icon{
+    height: auto;
+    display: inline;
+}
+
+/* main content */
+#row{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+}
+
+#row #side-bar{
+	flex-grow: 1;
+}
+
+.search-user{
+    max-width: 200px;
+}
+
+#container{
+    display: flex;
+    box-sizing: border-box;
+    flex: 0 0 80%;
+    flex-flow: column;
+    z-index: 100;
+}
+
+.post{
+    display: block;
+}
+
+/*TL*/
+.table{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.post-data{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.list-data{
+    display: flex;
+    width: 80%;
+    justify-content: inherit;
+}
+
+.list{
+    display: flex;
+    flex-flow: column;
+}
+
+.post-data .list{
+    padding: 10px;
+}
+.list li:nth-child(1){
+    padding-bottom: 10px;
+}
+
+.table ul{  /*投稿内容*/
+    padding:10px;
+    width: 100%;
+    border-bottom: 1px solid #333;
+}
+
+.post-data li img{
+
+}
+
+
+.time-line{
+    margin: 10px;
+}
+
+#menu{
+text-align: right;
+}
+
+.container{
+    display: flexbox;
+    width: 100%;
+}
+.create-data{
+    display: flex;
+    flex-flow: column;
+    text-align: end;
+}
+
+.created-time{
+    position: relative;
+    right: 0px;
+    top: 0px;
+    font-size: 0.8rem;
+}
+
+/* ＴＬ部分を直すためのところflexbox */
+.flex{
+    background-color: skyblue;
+    margin: 10px;
+}
+
+/* サイドバー */
+
+#side-bar{
+    flex: 0 0 19%;
+    width: 100%;
+    min-height: 100vh;
+    border-left: 1px solid #727272;
+    box-sizing: border-box;
+}
+
+#side-bar p{
+    padding: 10px;
+}
+
+#confirm{
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 10px 0 10px 10px;
+}
+
+#confirm span{
+    content: "    ";
+}
+
+#side-bar #confirm .btn
+{
+    border: 1px solid #0656CF;
+    border-radius: 5px;
+    background-color: #0656CF;
+    text-align: center;
+    max-width: 200px;
+    transform: scale( 0.6 , 1 );
+    margin: 0 0 0 auto;
+}
+
+.btn a{
+    color: #fff;
+}
+
+/* edit */
+
+.edit-area{
+    display: flex;
+}
+.form-edit form #input{
+    display: block;
+    padding: 10px;
+    background-color: #EFEFEF;
+    border: 1px solid #7E7E7E;
+}
+
+.form-edit{
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.form{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.form label{
+    padding: 0 10px;
+}
+
+.form input{
+    position: relative;
+    right: 0;
+}
+
+.btn-edit{
+    width: 150px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ED3A50;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    margin: 10px 0;
+}
+
+.edit-icon{
+    text-align: right;
+    padding-top: 20px;
+}
+
+
+/* follower */
+
+.follow-container{
+    display: flex;
+    flex-flow: column;
+}
+
+.follow-list{
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 5px solid #DBDBDB;
+}
+
+.post{
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #333;
+    justify-content: space-between;
+}
+
+.post li:nth-child(2){
+    margin-right:auto;
+}
+
+.post li:nth-child(3){
+    margin-right:auto;
+}
+
+.follow_icon{
+    display: flex;
+    flex-direction :row;
+}
+
+/* follow 遷移 */
+.follow-top{
+    box-sizing: border-box;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+    border-bottom: 5px solid #DBDBDB;
+}
+
+.follow-bio{
+    display: flex;
+    align-items: center;
+}
+.follow-introduction span{
+    display: inline-block;
+    width: 200px;
+}
+
+/* search */
+
+.search-post{
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+    align-items: center;
+}
+
+.search-action{
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 5px solid #DBDBDB;
+}
+
+.search-action form{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.search-action form p:nth-child(1){
+    padding: 20px;
+}
+
+/* 検索ボタン */
+
+.search-bar{
+    width: 100%;
+    margin: 10px;
+}
+
+#side-bar .btn-search{
+    padding: 10px 0 10px 10px;
+    border: 1px solid #0656CF;
+    border-radius: 5px;
+    background-color: #0656CF;
+    transform: scale( 0.8 , 1 );
+    max-width: 240px;
+}
+
+.search-fontawesome{
+    display: flex;
+    background-color: #0067C6;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-magnifying-glass{
+    font-size: 1.4rem;
+    color: #fff;
+}
